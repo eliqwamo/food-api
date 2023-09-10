@@ -1,4 +1,5 @@
 import express from 'express';
+import database from './utilis/database.js';
 
 import order from './routes/order.js';
 import account from './routes/account.js';
@@ -15,6 +16,14 @@ app.use('/api/account', account);
 app.use('/api/order', order);
 app.use('/api/products', products);
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+database
+.sync()
+.then(results => {
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port}`);
+    })
 })
+.catch(error => {
+    console.log(error);
+})
+
