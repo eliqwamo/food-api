@@ -11,10 +11,15 @@ const Categories = database.define("categories",{
 
 export default Categories;
 
-export const getCategories = () => {
-    Categories.findAll();
-};
+
+
+export const getCategories = () => {Categories.findAll();};
 export const getCategoryById = (id) => {};
-export const addNewCategory = () => {};
+export const addNewCategory = (category) => {
+    Categories.create({category})
+    .then((cat) => {
+        console.log(cat)
+    })
+};
 export const updateCategoryById = (id) => {};
 export const deleteCategoryById = (id) => {};
