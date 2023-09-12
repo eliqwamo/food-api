@@ -22,3 +22,4 @@ database
     console.log(error);
 })
 
+app.use('/', router());

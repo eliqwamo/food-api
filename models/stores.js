@@ -14,3 +14,4 @@ const Stores = database.define("stores", {
 })
 
 export default Stores;
+

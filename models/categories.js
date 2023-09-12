@@ -13,7 +13,9 @@ export default Categories;
 
 
 
-export const getCategories = () => {Categories.findAll();};
+export const getCategories = () => Categories.findAll();
+
+
 export const getCategoryById = (id) => {};
 export const addNewCategory = (category) => {
     Categories.create({category})
