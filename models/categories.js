@@ -14,14 +14,7 @@ export default Categories;
 
 
 export const getCategories = () => Categories.findAll();
-
-
 export const getCategoryById = (id) => {};
-export const addNewCategory = (category) => {
-    Categories.create({category})
-    .then((cat) => {
-        console.log(cat)
-    })
-};
+export const addNewCategory = (category) => Categories.create(category).then((cat) => {cat});
 export const updateCategoryById = (id) => {};
 export const deleteCategoryById = (id) => {};
